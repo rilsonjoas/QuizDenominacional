@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Denominacional</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Merriweather:wght@400;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Qual denominação se alinha mais comigo?</h1>
+        <p class="intro">
+            Muitas pessoas sabem que acreditam em Deus e confiam em Jesus, mas têm dificuldade em se envolver
+            em uma comunidade cristã devido à tarefa de selecionar uma denominação.
+            Este quiz apresentará crenças de diferentes denominações e pedirá que você
+            escolha com qual mais concorda. Ele então dirá com qual(is) denominação(ões) suas crenças
+            são mais semelhantes. Se você não tiver uma opinião forte sobre um assunto, sinta-se à vontade
+            para deixar a pergunta em branco.
+        </p>
+
+        <form id="quiz-form">
+            <div id="quiz-container">
+            </div>
+
+            <button type="button" id="submit-btn">Ver Resultado</button>
+        </form>
+
+        <div id="results-container" style="display: none;">
+            <h2>Resultado:</h2>
+            <div id="results-output">
+            </div>
+        </div>
+
+        <div id="share-image-container" style="display: none; margin-top: 20px; text-align: center;">
+            <h3>Seu Resultado Visual:</h3>
+            <div id="result-image-preview-area" style="border: 2px dashed #A1887F; padding: 10px; margin-bottom: 15px; background-color: #FDFBF8; min-height: 100px; display: flex; justify-content: center; align-items: center;">
+                <p><i>Gerando imagem do resultado...</i></p>
+            </div>
+
+            <div class="action-buttons" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                 <a id="download-image-link" style="display: none; background-color: #795548; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-size: 1.1em; font-weight: bold; border: none; cursor: pointer;">Baixar Imagem</a>
+                 <button id="copy-image-btn" type="button" style="display: none; background-color: #795548; color: white; padding: 12px 20px; border-radius: 6px; text-decoration: none; font-size: 1.1em; font-weight: bold; border: none; cursor: pointer;">Copiar Imagem</button>
+            </div>
+
+            <p style="font-size: 0.9em; color: #6D4C41; margin-top: 15px;">Baixe ou copie a imagem e compartilhe nas suas redes sociais!</p>
+        </div>
+
+        <div id="result-card-for-image" style="display: none; position: absolute; left: -9999px; width: 600px; padding: 30px; background-color: #F8F0E6; border: 3px solid #5D4037; border-radius: 10px; font-family: 'Nunito Sans', sans-serif; color: #4A3B31;">
+            <h2 style="font-family: 'Merriweather', serif; color: #5D4037; text-align: center; font-size: 28px; margin-bottom: 20px;">Meu resultado no Quiz Denominacional!</h2>
+            <div id="result-card-content" style="font-size: 18px; line-height: 1.6;">
+
+            </div>
+            <p style="text-align: center; margin-top: 25px; font-size: 14px; color: #795548;">Descubra o seu também!</p>
+            <p style="text-align:center; margin-top: 5px; font-size:12px; color: #A1887F;">Gerado por Quiz Denominacional</p>
+        </div>
+
+    </div> 
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</body>
+</html>

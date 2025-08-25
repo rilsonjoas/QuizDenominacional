@@ -611,3 +611,69 @@
     padding: 1.5rem;
   }
 }
+
+/* Melhorias para modo escuro nos Resultados */
+[data-theme="dark"] .resultsHeader {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+[data-theme="dark"] .resultCard {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .firstPlace {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .secondPlace {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .thirdPlace {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: var(--color-secondary);
+}
+
+[data-theme="dark"] .allResults {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .resultItem {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .resultItem:hover {
+  background: var(--color-bg-tertiary);
+}
+
+[data-theme="dark"] .resultItemBar {
+  background: var(--color-bg-tertiary);
+}
+
+[data-theme="dark"] .disclaimer {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: var(--color-accent);
+}
+
+[data-theme="dark"] .shareContainer {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .imagePreview {
+  background: var(--color-bg-secondary);
+}
+
+[data-theme="dark"] .hiddenCard {
+  background: var(--color-bg-primary);
+}
+
+[data-theme="dark"] .hiddenCardResult {
+  background: var(--color-bg-secondary);
+  border-left-color: var(--color-primary);
+}

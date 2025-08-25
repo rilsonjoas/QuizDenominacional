@@ -3,6 +3,7 @@ import { promises as fs } from 'fs';
 import QuizClient from '@/components/QuizClient';
 import styles from './HomePage.module.css';
 import { Brain, Heart, Users, Target, BookOpen, Award } from 'lucide-react';
+import Image from 'next/image';
 
 export default async function HomePage() {
   const dataDirectory = path.join(process.cwd(), 'public/data');
@@ -15,6 +16,15 @@ export default async function HomePage() {
     <main className={styles.main}>
       <div className={styles.container}>
         <header className={styles.header}>
+          <div className={styles.logoContainer}>
+            <Image 
+              src="/logo.svg" 
+              alt="Quiz Denominacional" 
+              width={80} 
+              height={80}
+              className={styles.logo}
+            />
+          </div>
           <h1 className={styles.heading}>
             Qual denominação se alinha mais comigo?
           </h1>
@@ -87,6 +97,22 @@ export default async function HomePage() {
         <div className={styles.quizContainer}>
           <QuizClient questions={questions} denominations={denominations} />
         </div>
+
+        <footer className={styles.footer}>
+          <div className={styles.footerContent}>
+            <p className={styles.footerText}>
+              © 2025 Quiz Denominacional. Desenvolvido por{' '}
+              <a 
+                href="https://github.com/rilsonjoas" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+              >
+                Rilson Joás
+              </a>
+            </p>
+          </div>
+        </footer>
       </div>
     </main>
   );

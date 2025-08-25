@@ -1,9 +1,10 @@
 .main {
   min-height: 100vh;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--color-bg-gradient);
   position: relative;
   overflow: hidden;
+  transition: background 0.3s ease;
 }
 
 .main::before {
@@ -30,9 +31,25 @@
   animation: fadeIn 0.8s ease-out;
 }
 
+.logoContainer {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
 .heading {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
   color: var(--color-text-white);
   margin-bottom: 1rem;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,10 +57,10 @@
 }
 
 .subheading {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2rem;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .introCard {
@@ -58,8 +75,8 @@
 }
 
 .intro {
-  font-size: 1.1rem;
-  line-height: 1.7;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--color-text-primary);
   text-align: center;
   max-width: 800px;
@@ -68,9 +85,10 @@
 
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1000px;
+  margin: 0 auto 3rem;
   gap: 1.5rem;
-  margin-bottom: 3rem;
 }
 
 .feature {
@@ -97,7 +115,7 @@
 }
 
 .featureTitle {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-text-primary);
   margin-bottom: 0.5rem;
@@ -119,6 +137,26 @@
   animation: fadeIn 1s ease-out 0.4s both;
 }
 
+/* Garantir máximo de 3 colunas em telas grandes */
+@media (min-width: 1200px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .main {
@@ -133,6 +171,7 @@
   .features {
     grid-template-columns: 1fr;
     gap: 1rem;
+    max-width: none;
   }
   
   .quizContainer {
@@ -152,4 +191,62 @@
   .quizContainer {
     padding: 1rem;
   }
+}
+
+/* Footer */
+.footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.footerContent {
+  text-align: center;
+}
+
+.footerText {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+.footerLink {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-normal);
+}
+
+.footerLink:hover {
+  color: var(--color-primary-light);
+  text-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
+/* Melhorias para modo escuro */
+[data-theme="dark"] .introCard {
+  background: rgba(26, 26, 46, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .feature {
+  background: rgba(26, 26, 46, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .feature:hover {
+  background: rgba(26, 26, 46, 1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .quizContainer {
+  background: rgba(26, 26, 46, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .footer {
+  background: rgba(15, 15, 30, 0.9);
+  border-top-color: rgba(255, 255, 255, 0.1);
 }

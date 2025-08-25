@@ -216,37 +216,52 @@
   align-items: center;
   margin-bottom: 2rem;
   gap: 1rem;
+  width: 100%;
 }
 
 .navButton {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  border: 2px solid var(--color-border);
-  background: var(--color-bg-primary);
-  color: var(--color-text-secondary);
-  border-radius: var(--radius-md);
-  font-weight: 500;
+  padding: 0.875rem 1.75rem;
+  border: 2px solid var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  border-radius: var(--radius-lg);
+  font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-normal);
+  box-shadow: var(--shadow-md);
+  font-size: 0.95rem;
 }
 
 .navButton:hover:not(.navButtonDisabled) {
-  border-color: var(--color-primary);
-  color: var(--color-primary);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
 }
 
 .navButtonDisabled {
-  opacity: 0.5;
+  opacity: 0.3;
   cursor: not-allowed;
+  background: var(--color-text-muted) !important;
+  border-color: var(--color-text-muted) !important;
+  pointer-events: none;
 }
 
 .navButtonDisabled:hover {
   transform: none;
-  box-shadow: none;
+  box-shadow: var(--shadow-md);
+}
+
+/* Estilos específicos para botões de navegação */
+.navButtonPrevious {
+  min-width: 120px;
+}
+
+.navButtonNext {
+  min-width: 120px;
 }
 
 .navIcon {
@@ -257,7 +272,7 @@
 .navCenter {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .submitButton {
@@ -383,12 +398,19 @@
   }
   
   .navigation {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     gap: 1rem;
   }
   
   .navCenter {
-    width: 100%;
+    width: auto;
+    flex: 1;
+  }
+  
+  .navButtonPrevious,
+  .navButtonNext {
+    min-width: 100px;
   }
   
   .submitButton {
@@ -429,4 +451,60 @@
     height: 20px;
     font-size: 0.625rem;
   }
+}
+
+/* Melhorias para modo escuro no Quiz */
+[data-theme="dark"] .quizHeader {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .questionCard {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border);
+}
+
+[data-theme="dark"] .questionCard:hover {
+  border-color: var(--color-border-hover);
+}
+
+[data-theme="dark"] .optionLabel {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .optionLabel:hover {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-primary-light);
+}
+
+[data-theme="dark"] .optionSelected {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .navButton {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+[data-theme="dark"] .navButton:hover:not(.navButtonDisabled) {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+[data-theme="dark"] .submitButton {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+
+[data-theme="dark"] .indicator {
+  background: var(--color-bg-primary);
+  border-color: var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+[data-theme="dark"] .indicator:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }

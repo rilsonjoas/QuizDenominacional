@@ -38,7 +38,7 @@
 }
 
 .logo {
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));
   animation: logoFloat 3s ease-in-out infinite;
 }
 
@@ -48,7 +48,8 @@
 }
 
 .heading {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-family: 'Inter', var(--font-inter), sans-serif;
+  font-size: clamp(1.2rem, 3vw, 2rem);
   font-weight: 700;
   color: var(--color-text-white);
   margin-bottom: 1rem;
@@ -57,7 +58,8 @@
 }
 
 .subheading {
-  font-size: 1.1rem;
+  font-family: 'Inter', var(--font-inter), sans-serif;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2rem;
   font-weight: 400;
@@ -75,7 +77,8 @@
 }
 
 .intro {
-  font-size: 1rem;
+  font-family: 'Inter', var(--font-inter), sans-serif;
+  font-size: 0.95rem;
   line-height: 1.6;
   color: var(--color-text-primary);
   text-align: center;
@@ -115,14 +118,16 @@
 }
 
 .featureTitle {
-  font-size: 1rem;
+  font-family: 'Inter', var(--font-inter), sans-serif;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--color-text-primary);
   margin-bottom: 0.5rem;
 }
 
 .featureDescription {
-  font-size: 0.9rem;
+  font-family: 'Inter', var(--font-inter), sans-serif;
+  font-size: 0.85rem;
   color: var(--color-text-secondary);
   line-height: 1.5;
 }
@@ -198,8 +203,8 @@
   margin-top: 4rem;
   padding: 2rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: none;
+  backdrop-filter: none;
 }
 
 .footerContent {
@@ -207,8 +212,9 @@
 }
 
 .footerText {
+  font-family: 'Inter', var(--font-inter), sans-serif;
   color: rgba(255, 255, 255, 0.9);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin: 0;
   font-weight: 400;
 }
@@ -246,7 +252,3 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-[data-theme="dark"] .footer {
-  background: rgba(15, 15, 30, 0.9);
-  border-top-color: rgba(255, 255, 255, 0.1);
-}

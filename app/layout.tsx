@@ -1,8 +1,10 @@
+import React from 'react';
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeContext'
 import ThemeToggle from '@/components/ThemeToggle'
+import SetDarkThemeClient from '@/components/SetDarkThemeClient';
 
 // Configuração da fonte Inter
 const inter = Inter({
@@ -17,13 +19,17 @@ export const metadata: Metadata = {
   description: 'Um quiz interativo e moderno que ajuda você a descobrir qual denominação cristã está mais alinhada com suas crenças e valores teológicos.',
   keywords: 'quiz, denominação, cristão, teologia, igreja, crenças, religião',
   authors: [{ name: 'Rilson Joás' }],
-  viewport: 'width=device-width, initial-scale=1',
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
     apple: '/favicon.svg',
   },
 }
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export default function RootLayout({
   children,
@@ -34,6 +40,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={inter.variable}>
       <body>
         <ThemeProvider>
+          <SetDarkThemeClient />
           <ThemeToggle />
           {children}
         </ThemeProvider>
